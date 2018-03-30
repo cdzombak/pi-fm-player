@@ -12,5 +12,5 @@ do
 	fi
 	LAST_FILE="$FILE"
 
-	ffmpeg -i "$FILE" -f s16le -ar 22.05k -ac 1 - | sudo ./pifm/pifm - 103.3
+	ffmpeg -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - | sudo ./pifm/pifm - 103.3
 done
