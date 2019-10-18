@@ -1,0 +1,15 @@
+[Unit]
+Description=PiAlarm Music Transmitter
+
+[Service]
+WorkingDirectory=/home/pi/music
+ExecStart=/home/pi/music/play.sh
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pialarm-transmit
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
