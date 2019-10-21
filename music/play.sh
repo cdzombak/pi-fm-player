@@ -12,5 +12,6 @@ do
 	fi
 	LAST_FILE="$FILE"
 
-	ffmpeg -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - | sudo ~/music/pifm/pifm - 103.3
+	echo "$(date "+%F %T %Z"): $(basename "$FILE")"
+	ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - | sudo ~/music/pifm/pifm - 103.3
 done
