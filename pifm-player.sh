@@ -35,5 +35,5 @@ while true; do
 	LAST_FILE="$FILE"
 
 	echo "$(date "+%F %T %Z"): Playing '$(basename "$FILE")'"
-	ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - | sudo "$PIFM_BIN" - "$PIFM_FREQ"
+	ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - | "$PIFM_BIN" - "$PIFM_FREQ"
 done
