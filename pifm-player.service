@@ -1,0 +1,17 @@
+[Unit]
+Description=PiFM Player
+
+[Service]
+User=pi
+Group=pi
+ExecStart=/home/pi/pifm-player.sh
+Environment=MUSIC_DIR=/home/pi/Music
+Environment=PIFM_BIN=/opt/pifm/pifm
+Environment=PIFM_FREQ=103.3
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pifm-player
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
