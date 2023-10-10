@@ -1,6 +1,6 @@
-# pialarm
+# pi-fm-player
 
-A Raspberry Pi-based FM transmitter, originally written for my home alarm clock.
+A Raspberry Pi-based music player + FM transmitter, originally created for my home alarm clock. `pi-fm-player` continuously transmits MP3s stored locally, in a random order, on the FM frequency of your choice.
 
 ## Hardware Setup
 
