@@ -23,12 +23,11 @@ if [ ! -d "$MUSIC_DIR" ]; then
 	exit 1
 fi
 if [ -z "$(ls -A "$MUSIC_DIR")" ]; then
-   echo "WARNING: '$MUSIC_DIR' is empty."
+	echo "WARNING: '$MUSIC_DIR' is empty."
 fi
 echo "Reading music from '$MUSIC_DIR'."
 
-while true
-do
+while true; do
 	FILE=$(find "$MUSIC_DIR" -type f | shuf -n 1)
 	if [ "$FILE" == "$LAST_FILE" ]; then
 		continue

@@ -11,19 +11,19 @@ Connect a ~20cm single-conductor wire to GPIO 4 (which is pin 7 on [header P1](h
 On the Raspberry Pi:
 
 - Place the `pifm` directory from this repo at a location of your choosing.
-    - I placed it in `/opt` on my Raspberry Pi.
-    - You may wish to adjust file permissions if installing it in `/opt` or similar. I did this by running `sudo chown -R root:root /opt/pifm`.
+  - I placed it in `/opt` on my Raspberry Pi.
+  - You may wish to adjust file permissions if installing it in `/opt` or similar. I did this by running `sudo chown -R root:root /opt/pifm`.
 - Put MP3 files in a directory of your choice.
-    - I'm using [Syncthing](https://syncthing.net) to sync music to `~/Music` on my Pi.
+  - I'm using [Syncthing](https://syncthing.net) to sync music to `~/Music` on my Pi.
 - Setup `pifm-player.service`, the systemd service which runs the transmitter.
-    - First, customize `pifm-player.service`.
-    - Set the environment variables `MUSIC_DIR` and `PIFM_BIN` to point to the music directory and the `pifm` binary on your system.
-    - Set the variable `PIFM_FREQ` to change to a different FM frequency.
-    - `sudo mv pifm-player.service /etc/systemd/system/`
-    - `sudo chmod 0644 /etc/systemd/system/pifm-player.service`
+  - First, customize `pifm-player.service`.
+  - Set the environment variables `MUSIC_DIR` and `PIFM_BIN` to point to the music directory and the `pifm` binary on your system.
+  - Set the variable `PIFM_FREQ` to change to a different FM frequency.
+  - `sudo mv pifm-player.service /etc/systemd/system/`
+  - `sudo chmod 0644 /etc/systemd/system/pifm-player.service`
 - Finally, enable and run the transmitter service:
-    - `sudo systemctl enable pifm-player.service`
-    - `sudo systemctl start pifm-player.service`
+  - `sudo systemctl enable pifm-player.service`
+  - `sudo systemctl start pifm-player.service`
 
 ## Logs
 
@@ -41,10 +41,10 @@ sudo journalctl -u pialarm-transmit.service --since "2019-10-21 07:30:00" --unti
 
 ## License
 
-Released under the [Unlicense](https://choosealicense.com/licenses/unlicense/#) (see `LICENSE` in this repo).
+Released under the [Unlicense](https://choosealicense.com/licenses/unlicense/) (see `LICENSE` in this repo).
 
 ## Author
 
 Chris Dzombak
-- https://www.github.com/cdzombak
-- https://www.dzombak.com
+- [github.com/cdzombak](https://www.github.com/cdzombak)
+- [dzombak.com](https://www.dzombak.com)

@@ -1,0 +1,18 @@
+# https://megalinter.io/configuration/
+---
+VALIDATE_ALL_CODEBASE: true
+EXCLUDED_DIRECTORIES:
+  - pifm
+
+DISABLE:
+  - SPELL
+DISABLE_LINTERS:
+  - MAKEFILE_CHECKMAKE
+  - REPOSITORY_DEVSKIM
+PLUGINS:
+  - https://raw.githubusercontent.com/shiranr/linkcheck/main/mega-linter-plugin-linkcheck/linkcheck.megalinter-descriptor.yml
+  - https://raw.githubusercontent.com/cdzombak/mega-linter-plugin-dockerfilelint/main/mega-linter-plugin-dockerfilelint/dockerfilelint.megalinter-descriptor.yml
+
+SHOW_ELAPSED_TIME: false
+FILEIO_REPORTER: false
+PRINT_ALPACA: false
