@@ -28,12 +28,13 @@ fi
 echo "Reading music from '$MUSIC_DIR'."
 
 while true; do
-	FILE=$(find "$MUSIC_DIR" -type f | shuf -n 1)
+	FILE=$(find "$MUSIC_DIR" -type f -name "*.mp3" | shuf -n 1)
 	if [ "$FILE" == "$LAST_FILE" ]; then
 		continue
 	fi
 	LAST_FILE="$FILE"
 
 	echo "$(date "+%F %T %Z"): Playing '$(basename "$FILE")'"
-	ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - | "$PIFM_BIN" - "$PIFM_FREQ"
+	ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - \
+	  | "$PIFM_BIN" - "$PIFM_FREQ"
 done
