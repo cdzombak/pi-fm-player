@@ -4,7 +4,7 @@ A Raspberry Pi-based music player + FM transmitter, originally created for my ho
 
 ## Hardware Setup
 
-Connect a ~20cm single-conductor wire to GPIO 4 (which is pin 7 on [header P1](http://elinux.org/RPi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29)) to act as an antenna.
+Connect a ~20cm/8in single-conductor wire to GPIO 4 (which is pin 7 on [header P1](http://elinux.org/RPi_Low-level_peripherals#General_Purpose_Input.2FOutput_.28GPIO.29)) to act as an antenna.
 
 ## Install & Configure
 
@@ -46,5 +46,6 @@ Released under the [Unlicense](https://choosealicense.com/licenses/unlicense/) (
 ## Author
 
 Chris Dzombak
+
 - [github.com/cdzombak](https://www.github.com/cdzombak)
 - [dzombak.com](https://www.dzombak.com)
