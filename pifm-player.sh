@@ -37,7 +37,7 @@ while true; do
 	fi
 	LAST_FILE="$FILE"
 
-	FILE_HASH=$(echo -n "$FILE" | sha256sum)
+	FILE_HASH=$(echo -n "$FILE" | sha256sum | cut -f1 -d' ')
 	CACHED_FILE="$MUSIC_CACHE_DIR/$FILE_HASH"
 	if [ ! -f "$CACHED_FILE" ]; then
 		echo "Decoding '$(basename "$FILE")'..."
