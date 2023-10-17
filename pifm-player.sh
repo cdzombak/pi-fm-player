@@ -43,6 +43,6 @@ while true; do
 		echo "Decoding '$(basename "$FILE")'..."
 		ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - > "$CACHED_FILE"
 	fi
-	echo "$(date "+%F %T %Z"): Playing '$(basename "$FILE")'"
+	echo "Playing '$(basename "$FILE")'"
 	< "$CACHED_FILE" "$PIFM_BIN" - "$PIFM_FREQ"
 done
