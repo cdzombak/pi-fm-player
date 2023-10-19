@@ -6,6 +6,7 @@ ExecStart=/home/pi/pifm-player.sh
 Environment=MUSIC_DIR=/home/pi/Music
 Environment=PIFM_BIN=/opt/pifm/pifm
 Environment=PIFM_FREQ=103.3
+Nice=-19
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=pifm-player
