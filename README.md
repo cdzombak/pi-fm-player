@@ -39,6 +39,13 @@ sudo journalctl -f -u pifm-player.service
 sudo journalctl -u pialarm-transmit.service --since "2019-10-21 07:30:00" --until "2019-10-21 07:50:00"
 ```
 
+## Monitoring
+
+You can use [`runner`](https://github.com/cdzombak/runner) and an [Uptime Kuma](https://github.com/louislam/uptime-kuma) push monitor to get alerted if/when the pi-fm service fails. After installing `runner`, put the following in `/etc/cron.d/pifm-check`:
+```text
+*  *  *  *  *  root  runner -job-name pifm-check -retries 2 -retry-delay 15 -success-notify "https://my-uptime-kuma-host.example.com:9001/api/push/1234abcd?status=up&msg=OK&ping=" -- systemctl is-active --quiet service pifm-player.service
+```
+
 ## License
 
 Released under the [Unlicense](https://choosealicense.com/licenses/unlicense/) (see `LICENSE` in this repo).
