@@ -41,8 +41,8 @@ while true; do
 	CACHED_FILE="$MUSIC_CACHE_DIR/$FILE_HASH"
 	if [ ! -f "$CACHED_FILE" ]; then
 		echo "Decoding '$(basename "$FILE")'..."
-		ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - > "$CACHED_FILE"
+		ffmpeg -nostats -hide_banner -loglevel panic -i "$FILE" -filter:a "volume=0.95" -f s16le -ar 22.05k -ac 1 - >"$CACHED_FILE"
 	fi
 	echo "Playing '$(basename "$FILE")'"
-	< "$CACHED_FILE" "$PIFM_BIN" - "$PIFM_FREQ"
+	"$PIFM_BIN" <"$CACHED_FILE" - "$PIFM_FREQ"
 done

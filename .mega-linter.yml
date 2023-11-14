@@ -9,9 +9,7 @@ DISABLE:
 DISABLE_LINTERS:
   - MAKEFILE_CHECKMAKE
   - REPOSITORY_DEVSKIM
-PLUGINS:
-  - https://raw.githubusercontent.com/shiranr/linkcheck/main/mega-linter-plugin-linkcheck/linkcheck.megalinter-descriptor.yml
-  - https://raw.githubusercontent.com/cdzombak/mega-linter-plugin-dockerfilelint/main/mega-linter-plugin-dockerfilelint/dockerfilelint.megalinter-descriptor.yml
+  - REPOSITORY_KICS
 
 SHOW_ELAPSED_TIME: false
 FILEIO_REPORTER: false
